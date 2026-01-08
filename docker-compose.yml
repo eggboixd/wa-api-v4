@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  wa-api:
+    build: .
+    container_name: wa-api-v4
+    restart: always
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - ./auth_info_baileys:/usr/src/app/auth_info_baileys
+    env_file:
+      - .env
+    environment:
+      - SESSION_PATH=/usr/src/app/auth_info_baileys

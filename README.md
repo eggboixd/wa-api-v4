@@ -34,11 +34,37 @@ SESSION_PATH=./auth_info_baileys
 
 ## Menjalankan Server
 
+### Menggunakan Node.js (Manual)
+
 ```bash
 node index.js
 ```
 
-Saat pertama kali dijalankan, scan QR Code yang muncul di terminal atau akses endpoint QR di browser.
+### Menggunakan Docker Compose
+
+Pastikan Docker dan Docker Compose sudah terinstall.
+
+```bash
+docker compose up -d --build
+```
+
+Perintah di atas akan:
+1.  Membangun image dari `Dockerfile`.
+2.  Menjalankan container di background (`-d`).
+3.  Mapping port sesuai `.env` (default 3000).
+4.  Mapping volume `./auth_info_baileys` agar sesi login tidak hilang saat container dihapus.
+
+Untuk melihat log:
+```bash
+docker compose logs -f
+```
+
+Untuk menghentikan:
+```bash
+docker compose down
+```
+
+Saat pertama kali dijalankan, scan QR Code yang muncul di terminal (lihat logs) atau akses endpoint QR di browser.
 
 ## Dokumentasi API
 
