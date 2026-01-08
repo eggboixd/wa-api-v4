@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment Variables
+.env
+
+# Baileys Session Data (SENSITIVE)
+auth_info_baileys/
+
+# OS Specific
+.DS_Store
+Thumbs.db
